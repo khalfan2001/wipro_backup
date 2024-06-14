@@ -1,0 +1,15 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.table th {
+    cursor: pointer;
+}
