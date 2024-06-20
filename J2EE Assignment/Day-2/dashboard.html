@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Management Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">CodeX Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Policies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" data-toggle="list" role="tab">Overview</a>
+                    <a href="#" class="list-group-item list-group-item-action" data-toggle="list" role="tab">Manage Policies</a>
+                    <a href="#" class="list-group-item list-group-item-action" data-toggle="list" role="tab">Reports</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                        <h3>Overview</h3>
+                        <p>Summary and statistics of policies.</p>
+                    </div>
+                    <div class="tab-pane fade" id="manage-policies" role="tabpanel">
+                        <h3>Manage Policies</h3>
+                        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addPolicyModal">Add New Policy</button>
+                        <div id="policyTableContainer">
+                            <!-- Policy table will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="reports" role="tabpanel">
+                        <h3>Reports</h3>
+                        <p>Generate and view reports.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Policy Modal -->
+    <div class="modal fade" id="addPolicyModal" tabindex="-1" aria-labelledby="addPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addPolicyModalLabel">Add New Policy</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addPolicyForm">
+                        <div class="form-group">
+                            <label for="policyName">Policy Name</label>
+                            <input type="text" class="form-control" id="policyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="policyDetails">Policy Details</label>
+                            <textarea class="form-control" id="policyDetails" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="policyType">Policy Type</label>
+                            <select class="form-control" id="policyType" required>
+                                <option value="">Select...</option>
+                                <option value="type1">Type 1</option>
+                                <option value="type2">Type 2</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Policy</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
